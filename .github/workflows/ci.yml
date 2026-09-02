@@ -1,8 +1,8 @@
-name CI Pipeline Basic
+name: CI Pipeline Basic
 
 on:
   push:
-    branches:["main", "master"]
+    branches: ["main", "master"]
   pull_request:
     branches: ["main", "master"]
 
@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@4
-      
+        uses: actions/checkout@v4
+
       - name: Print system info
         run: |
           echo "Hello"
@@ -24,9 +24,9 @@ jobs:
     needs: log-job
     steps:
       - name: Checkout code
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
 
-      - name: Setup NoteJS
+      - name: Setup NodeJS
         uses: actions/setup-node@v4
         with:
           node-version: "20"
